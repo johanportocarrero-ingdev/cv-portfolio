@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var script = document.createElement('script');
       script.src = 'https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js';
       script.async = true;
-      script.onload = function () {
+      script.onload = function() {
         resolve(html2pdf);
       };
       script.onerror = function (event) {
@@ -73,7 +73,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         html2pdfInstance().set(opt).from(resume).save();
       })
-      .catch(function () {
+      .catch(function (error) {
+        // Log the error to the console for debugging purposes
+        console.error('Error generating PDF:', error);
+        // Provide a more informative error message to the user
         alert('No se pudo generar el PDF. Intenta nuevamente en unos segundos.');
       })
       .finally(function () {
