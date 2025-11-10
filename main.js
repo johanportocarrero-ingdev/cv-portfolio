@@ -74,9 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         html2pdfInstance().set(opt).from(resume).save();
       })
       .catch(function (error) {
-        // Log the error to the console for debugging purposes
         console.error('Error generating PDF:', error);
-        // Provide a more informative error message to the user
         alert('No se pudo generar el PDF. Intenta nuevamente en unos segundos.');
       })
       .finally(function () {
